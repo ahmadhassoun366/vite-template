@@ -1,0 +1,115 @@
+.tooltip {
+	@apply absolute;
+	@apply z-10;
+	@apply p-2;
+	@apply text-sm;
+	@apply font-semibold;
+
+	max-width: 300px;
+	min-width: 120px;
+	white-space: normal;
+
+	@apply text-center;
+
+	@apply text-gray-700;
+	@apply bg-white;
+	@apply dark:text-white;
+	@apply dark:bg-abrandc-dark-grey;
+
+	@apply rounded-lg;
+	@apply shadow-md;
+
+	animation: op1 150ms linear;
+
+	// arrow
+	&::before {
+		content: '';
+		@apply absolute;
+		@apply border-solid;
+		@apply border-transparent;
+	}
+
+	&.up {
+		@apply bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2;
+
+		// Arrow pointing upwards
+		&::before {
+			border-width: 8px 8px 0 8px;
+			@apply top-full;
+			@apply left-1/2;
+
+			@apply border-t-white;
+			@apply dark:border-t-gray-900;
+			@apply -translate-x-1/2;
+		}
+	}
+
+	&.down {
+		@apply absolute top-full left-1/2 transform -translate-x-1/2 translate-y-2;
+
+		// Arrow pointing downwards
+		&::before {
+			border-width: 0 8px 8px 8px;
+			@apply bottom-full;
+			@apply left-1/2;
+
+			@apply border-b-white;
+			@apply dark:border-b-gray-900;
+			@apply -translate-x-1/2;
+
+			// @apply shadow-md;
+		}
+	}
+
+	&.left {
+		@apply right-full top-1/2 transform -translate-y-1/2 -translate-x-2;
+
+		// Arrow pointing to the left
+		&::before {
+			border-width: 8px 0 8px 8px;
+
+			@apply left-full;
+			@apply top-1/2;
+
+			@apply border-l-white;
+			@apply dark:border-l-gray-900;
+			@apply -translate-y-1/2;
+		}
+	}
+
+	&.right {
+		@apply absolute left-full top-1/2 transform -translate-y-1/2 translate-x-2;
+
+		// Arrow pointing to the right
+		&::before {
+			border-width: 8px 8px 8px 0;
+
+			@apply right-full;
+			@apply top-1/2;
+
+			@apply border-r-white;
+			@apply dark:border-r-gray-900;
+			@apply -translate-y-1/2;
+		}
+	}
+}
+
+@keyframes op1 {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100;
+	}
+}
+
+@keyframes opR {
+	from {
+		opacity: 100;
+	}
+
+	to {
+		opacity: 0;
+	}
+}

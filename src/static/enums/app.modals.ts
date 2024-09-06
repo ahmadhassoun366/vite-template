@@ -1,0 +1,6 @@
+enum APP_MODALS {
+	EXAMPLE_MODAL = '3X4MPL3_M0D4L',
+	LOGIN_MODAL = 'L0GIN_M0D4L'
+}
+
+export default APP_MODALS;

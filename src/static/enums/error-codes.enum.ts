@@ -1,0 +1,5 @@
+enum ERROR_CODES {
+	EXAMPLE_ERROR = '3X4MPL3_3RR0R',
+}
+
+export default ERROR_CODES;
